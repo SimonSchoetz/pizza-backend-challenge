@@ -7,6 +7,7 @@ Rushed into the project by starting with the "uninteresting" stuff because I wai
 
 18Dec'19
 - Changed this readme log to Eva's template - 0.5h
+- Research - 1h
 
  ---------------
 ## TODO (just for me)
@@ -65,10 +66,10 @@ Initial idea from Robert in this repo: https://github.com/losrobbos/fbw17-lots/b
 
 ## Time
 
-Estimated time: 1 Week beginning on Tuesday, 17th Dec. 2019,
+Estimated time: 1 Week beginning on Tuesday, 17th Dec 2019<br>
 Personal goal since it is Christmas/NYE: Getting it done before NYE
 
-- 3h Building Frontend 
+- 3h Building rough Frontend 
 - 5h Research DOM
 - 5h Building and implementing Backend
 - 2h Polishing (Bonus)
@@ -87,5 +88,8 @@ Personal goal since it is Christmas/NYE: Getting it done before NYE
 (What did you do this time that was an improvement on last time? Acknowledge your progress, you've earned it!)
 
 ## Buddy sign-off
+
+Buddy: Nicolas
+https://github.com/cocohost/pinePestKey
 
 (get together with your buddy, check each other's logs for completeness, talk through your projects as a pair. Include their name here once you're finished.)
