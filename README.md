@@ -6,9 +6,10 @@ Rushed into the project by starting with the "uninteresting" stuff because I wai
  - Started to build parts of the front end (parts of the page + wireframe) 
 
 18Dec'19
+Already 0.5h over planned Front End coding time
 - Changed this readme log to Eva's template - 0.5h
 - Research - 1h
-
+- More Frontend Coding - 0.5h
  ---------------
 ## TODO (just for me)
 

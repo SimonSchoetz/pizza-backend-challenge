@@ -5,7 +5,7 @@ GENERAL RESETS
 **************/
 * {
     box-sizing: border-box;
-    transition: 0.1s;
+    transition: 0.2s;
 }
 :root {
     font-size: 16px;
@@ -56,9 +56,14 @@ nav li {
      MAIN
 **************/
 main {
-    
     display: grid;
     grid-template-columns: 3fr 1fr;
+}
+
+h2 {
+    text-align: center;
+    margin: 0;
+    border-bottom: 1px solid rgba(50, 50, 50, 0.442);
 }
 
 #presets {
@@ -74,11 +79,28 @@ main {
 }
 
 
+
+#selection-area {
+
+}
+#individual-selection {
+    display: flex;
+    height: 70vh;
+}
+
+#individual-selection div {
+    flex-grow: 1;
+    border: 1px solid rgba(50, 50, 50, 0.442);
+}
+#individual-selection div:hover {
+    flex-grow: 1;
+    background-color: rgba(50, 50, 50, 0.158);
+}
+
+/*********
+RIGHT SECTION
+*********/
 #final-list {
     height: 80vh;
     border-left: 1px solid rgba(50, 50, 50, 0.442);
 }
-#selection-area {
-
-}
-
