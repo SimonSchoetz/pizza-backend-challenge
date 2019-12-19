@@ -34,6 +34,7 @@ a:active {
 header {
     position: fixed center;
     height: 20vh;
+    min-height: 100px;
     text-align: center;
     border-bottom: 0px black solid;
     box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.442);
@@ -67,7 +68,7 @@ h2 {
 }
 
 #presets {
-    height: 5vh;
+    height: 36px;
     display: flex;
     border-bottom: 1px solid rgba(50, 50, 50, 0.442);
     justify-content: center;
@@ -100,7 +101,31 @@ h2 {
 /*********
 RIGHT SECTION
 *********/
+#final-list * {
+    margin: 0;
+    padding: 0;
+}
 #final-list {
+    padding-top: 37px; /*so magic <3*/
     height: 80vh;
     border-left: 1px solid rgba(50, 50, 50, 0.442);
+}
+
+#final-table {
+    height: 65vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+#final-list ul {
+    
+    margin-left: 5vw;
+    display: flex;
+    flex-flow: wrap;
+}
+
+#final-list ul>li {
+    width: 50%;
+    min-width: fit-content;
 }
