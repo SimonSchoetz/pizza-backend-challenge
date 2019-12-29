@@ -3,6 +3,9 @@
 // Each button passes it's content (word) into a function call
 // So there is only one function to actually pass the ingredients to the list (for each category)
 
+/**********************************
+ * Basic Setup of the ingredients
+ *********************************/
 //Sauce
 const tomatoSauce = ["Tomato Sauce", 1];
 const cremeFresh = ["Créme Fresh", 1.50];
@@ -28,7 +31,14 @@ const rosemaryOil = ["Rosemary Oil", 0.70];
 const dough = ["Dough", 2];
 
 //
-let sum = 0;
+/**********************************
+ * Calculating and showing the sum
+ *********************************/
+let sum = 0; // 
+/**
+ * sum = dough + sauce +  sumCheese + sumToppings + sumExtras
+ * -> numbers will be updated in each calculation function
+ */
 
 const sumOnPage = document.querySelector('#target-sum');
 sumOnPage.textContent = sum + " €";
