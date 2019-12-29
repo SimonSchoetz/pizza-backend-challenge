@@ -14,6 +14,7 @@ const cremeFresh = ["Créme Fresh", 1.50];
 const gauda = ["Gauda", 1];
 const emmentaler = ["Emmentaler", 1.50];
 const gorgonzola = ["Gorgonzola", 2];
+let sumCheese = 0;
 
 // Toppings
 const salami = ["Salami", 1];
@@ -34,11 +35,29 @@ const dough = ["Dough", 2];
 /**********************************
  * Calculating and showing the sum
  *********************************/
-let sum = 0; // 
-/**
- * sum = dough + sauce +  sumCheese + sumToppings + sumExtras
- * -> numbers will be updated in each calculation function
- */
+let sum = dough[1] + sumCheese;
 
 const sumOnPage = document.querySelector('#target-sum');
 sumOnPage.textContent = sum + " €";
+
+document.getElementsByName("cheese").onchange = () => {
+    addCheese()
+};
+
+const addCheese = () => {
+    const checkBox = document.getElementsByName("cheese");
+
+    for (let i = 0; i < chbox.length; i++) {
+        if (checkBox[i].checked) {
+            sumCheese += 2;
+        }
+    }
+    return sumCheese;
+
+    /**
+     * for loop
+     * ID:checked ? ID:unchecked
+     */
+}
+
+
