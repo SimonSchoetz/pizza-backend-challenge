@@ -12,25 +12,35 @@
 const dough = ["Our classic dough", 2];
 
 //Sauce
-const sauce = [["Tomato Sauce", 1], ["Créme Fresh", 1.50]];
+const sauce = [
+    ["Tomato Sauce", 1],
+    ["Créme Fresh", 1.50]
+];
 let finalSauce = 0;
 
 // Cheese
-const cheese = [["Gauda", 1], ["Emmentaler", 1.50], ["Gorgonzola", 2]];
+const cheese = [
+    ["Gauda", 1],
+    ["Emmentaler", 1.50],
+    ["Gorgonzola", 2]
+];
 let finalSumCheese = 0;
 
 // Toppings
-const salami = ["Salami", 1];
-const olives = ["Olives", 0.80];
-const ruccola = ["Ruccola", 0.50];
-const parmesan = ["Parmesan", 0.50];
+const toppings = [["Salami", 1],
+["Olives", 0.80],
+["Ruccola", 0.50],
+["Parmesan", 0.50]
+];
 let finalSumToppings = 0;
 
 // Extras
-const oregano = ["Oregano", 0.30];
-const garlicOil = ["Garlic Oil", 0.50];
-const chilliOil = ["Chilli Oil", 0.40];
-const rosemaryOil = ["Rosemary Oil", 0.70];
+const extras = [
+    ["Oregano", 0.30],
+    ["Garlic Oil", 0.50],
+    ["Chilli Oil", 0.40],
+    ["Rosemary Oil", 0.70]
+];
 let finalSumExtras = 0;
 
 
@@ -84,6 +94,20 @@ const addIngredient = () => {
     for (let i = 0; i < checkBoxCheese.length; i++) {
         if (checkBoxCheese[i].checked) {
             sumCheese += cheese[i][1];
+        }
+    }
+
+    //calculate toppings
+    for (let i = 0; i < checkBoxToppings.length; i++) {
+        if (checkBoxToppings[i].checked) {
+            sumToppings += toppings[i][1];
+        }
+    }
+
+    //calculate extras
+    for (let i = 0; i < checkBoxExtras.length; i++) {
+        if (checkBoxExtras[i].checked) {
+            sumExtras += extras[i][1];
         }
     }
 
