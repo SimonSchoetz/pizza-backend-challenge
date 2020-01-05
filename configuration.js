@@ -9,7 +9,8 @@
 
 
 //Dough
-const dough = ["Our classic dough", 2];
+const dough = [["Our Classic Dough", 2]];
+let finalDough = 0;
 
 //Sauce
 const sauce = [
@@ -60,7 +61,8 @@ const fillList = () => {
     const checkBoxCheese = document.getElementsByName("cheese");
     const checkBoxToppings = document.getElementsByName("toppings");
     const checkBoxExtras = document.getElementsByName("extras");
-    let chosenSauce = 0
+    let chosenDough = 0;
+    let chosenSauce = 0;
     let sumCheese = 0;
     let sumToppings = 0;
     let sumExtras = 0;
@@ -79,13 +81,27 @@ const fillList = () => {
         const ul = document.querySelector(id);
         //Adds new li with content and displays it to DOM
         for (let j = 0; j < name[i].length; j++) {
-            const newLiItem = document.createElement("li");
+            const newLi = document.createElement("li");
             const newItem = document.createTextNode(name[i][j]);
-            //Somewhere here could be a loop to show number.toFixed(2) + " €"
-            newLiItem.appendChild(newItem);
-            ul.insertAdjacentElement("beforeend", newLiItem);
+            // if (typeof name[i][j] === "number") {
+            //     newItem = document.createTextNode(`${(name[i][j]).toFixed(2)} €`);
+            // }   // NOT WORKING
+            newLi.appendChild(newItem);
+            ul.insertAdjacentElement("beforeend", newLi);
         }
     }
+    //
+    //add dough to dom and sum
+    //kept code kinda similar to the others to keep it consistent and open possibility for future options of different dough 
+    for (let i = 0; i < dough.length; i++) {
+        if (i === 0) {
+            wipeList("#target-dough");
+        }
+        chosenDough = dough[i][1]; //for calculation of the finalSum
+        addIngredient(i, "#target-dough", dough);//for showing up on the final-list
+    }
+
+
     //evaluate sauce
     for (let i = 0; i < checkBoxSauce.length; i++) {
         if (i === 0) {
@@ -130,6 +146,7 @@ const fillList = () => {
     }
 
     //passing chosen ingredients to outer variables
+    finalDough = chosenDough;
     finalSauce = chosenSauce;
     finalSumCheese = sumCheese;
     finalSumToppings = sumToppings;
@@ -140,7 +157,7 @@ const fillList = () => {
 //Calculate and display final prize in DOM
 const finalSum = () => {
     const sumOnPage = document.querySelector("#target-sum");
-    sumOnPage.textContent = (dough[1] + finalSauce + finalSumCheese + finalSumToppings + finalSumExtras).toFixed(2) + " €";
+    sumOnPage.textContent = (finalDough + finalSauce + finalSumCheese + finalSumToppings + finalSumExtras).toFixed(2) + " €";
 }
 //initial call for showing bas ingredients on loading page
 fillList();

@@ -11,7 +11,13 @@ Rushed into the project by starting with the "uninteresting" stuff because I wai
 - More Frontend Coding - 0.5h
 
 19Dec'19
-Finished basic Frontend - 2.25h
+- Finished basic Frontend - 2.25h
+
+29Dec'19
+- Home zoning - 2h
+
+05Jan'20
+- Home zoning and finishing with major goal of creating selectors and showing selected ingredients + calculated sum on page - 6.5h
  ---------------
 ## TODO (just for me)
 
@@ -84,13 +90,19 @@ Personal goal since it is Christmas/NYE: Getting it done before NYE
 
 ## Challenges + lessons learned
 
-- Reference error: document not defined
+- Reference error: document not defined -> makes it hard to debug <br>
+-> still have to find out how to deal with this
+- wasn't able to show numbers in a prizing format for the ingredients
+- didn't come much further than my main goal in my time frame
 
-(What didn't go well? How would you advise future-you so it goes better next time?)
+- learned how to connect my html input tools with js functions
+- learned how to create new html elements with content in js
+
 
 ## Achievements
 
-(What did you do this time that was an improvement on last time? Acknowledge your progress, you've earned it!)
+- I found my way back into writing js functions
+- I made my main goal in time
 
 ## Buddy sign-off
 
