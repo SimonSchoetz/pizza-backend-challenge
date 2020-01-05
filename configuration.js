@@ -54,12 +54,31 @@ const addIngredient = () => {
     let sumToppings = 0;
     let sumExtras = 0;
 
+    //add sauce in DOM
+    const addSauce = (i) => {
+        const newLiItem = document.createElement("li");
+        const newItem = document.createTextNode(sauce[i][0]);
+        newLiItem.appendChild(newItem);
+        const newLiPrize = document.createElement("li");
+        const newPrize = document.createTextNode(sauce[i][1]);
+        newLiPrize.appendChild(newPrize);
+
+        const ul = document.querySelector("#target-sauce");
+        while (ul.firstChild) {
+            ul.removeChild(ul.firstChild);
+        }
+        ul.insertAdjacentElement("beforeend", newLiItem);
+        ul.insertAdjacentElement("beforeend", newLiPrize);
+    }
     //evaluate sauce
     for (let i = 0; i < checkBoxSauce.length; i++) {
         if (checkBoxSauce[i].checked) {
             chosenSauce += sauce[i][1];
+            addSauce(i);
         }
     }
+
+
     //calculate cheese
     for (let i = 0; i < checkBoxCheese.length; i++) {
         if (checkBoxCheese[i].checked) {
@@ -75,7 +94,7 @@ const addIngredient = () => {
 
     finalSum();
 }
-
+//Calculate and display final prize in DOM
 const finalSum = () => {
     const sumOnPage = document.querySelector("#target-sum");
     sumOnPage.textContent = dough[1] + finalSauce + finalSumCheese + finalSumToppings + finalSumExtras + " €";
