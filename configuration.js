@@ -120,8 +120,12 @@ const fillList = () => {
 
     //calculate extras
     for (let i = 0; i < checkBoxExtras.length; i++) {
+        if (i === 0) {
+            wipeList("#target-extras");
+        }
         if (checkBoxExtras[i].checked) {
             sumExtras += extras[i][1];
+            addIngredient(i, "#target-extras", extras);
         }
     }
 
