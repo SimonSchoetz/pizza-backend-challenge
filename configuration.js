@@ -56,19 +56,17 @@ const addIngredient = () => {
 
     //add sauce in DOM
     const addSauce = (i) => {
-        const newLiItem = document.createElement("li");
-        const newItem = document.createTextNode(sauce[i][0]);
-        newLiItem.appendChild(newItem);
-        const newLiPrize = document.createElement("li");
-        const newPrize = document.createTextNode(sauce[i][1]);
-        newLiPrize.appendChild(newPrize);
-
         const ul = document.querySelector("#target-sauce");
+        //Delete all li to make the replaced with new ones
         while (ul.firstChild) {
             ul.removeChild(ul.firstChild);
         }
-        ul.insertAdjacentElement("beforeend", newLiItem);
-        ul.insertAdjacentElement("beforeend", newLiPrize);
+        for (let j = 0; j < sauce[i].length; j++) {
+            const newLiItem = document.createElement("li");
+            const newItem = document.createTextNode(sauce[i][j])
+            newLiItem.appendChild(newItem);
+            ul.insertAdjacentElement("beforeend", newLiItem);
+        }
     }
     //evaluate sauce
     for (let i = 0; i < checkBoxSauce.length; i++) {
