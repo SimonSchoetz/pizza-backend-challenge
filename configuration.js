@@ -51,10 +51,11 @@ const addCheese = () => {
      * add all checked to sum
      * AFTER LOOP:
      * sumCheese = sum
-     * call summing calculation with the sum
+     * call summing calculation
      */
     const checkBox = document.getElementsByName("cheese");
     let sumOfPart = 0
+
     for (let i = 0; i < checkBox.length; i++) {
         if (checkBox[i].checked) {
             sumOfPart += 2;
@@ -64,8 +65,6 @@ const addCheese = () => {
     sumCheese = sumOfPart;
 
     finalSum();
-
-
 }
 
 const finalSum = () => {
