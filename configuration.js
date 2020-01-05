@@ -10,8 +10,7 @@
 
 
 //Sauce
-const tomatoSauce = ["Tomato Sauce", 1];
-const cremeFresh = ["Créme Fresh", 1.50];
+const sauce = [["Tomato Sauce", 1], ["Créme Fresh", 1.50]];
 let finalSauce = 0;
 
 // Cheese
@@ -55,6 +54,12 @@ const addIngredient = () => {
     let sumToppings = 0;
     let sumExtras = 0;
 
+    //evaluate sauce
+    for (let i = 0; i < checkBoxSauce.length; i++) {
+        if (checkBoxSauce[i].checked) {
+            chosenSauce += sauce[i][1];
+        }
+    }
     //calculate cheese
     for (let i = 0; i < checkBoxCheese.length; i++) {
         if (checkBoxCheese[i].checked) {
