@@ -48,7 +48,7 @@ let finalSumExtras = 0;
 /**********************************
  * Calculating and showing the sum
  *********************************/
-const addIngredient = () => {
+const fillList = () => {
     /**
      * on call, check which boxes are checked
      * add all checked to sumX
@@ -65,7 +65,8 @@ const addIngredient = () => {
     let sumToppings = 0;
     let sumExtras = 0;
 
-    //add sauce in DOM
+
+    //add sauce to DOM
     const addSauce = (i) => {
         const ul = document.querySelector("#target-sauce");
         //Delete all li so they can be replaced with new ones
@@ -90,10 +91,24 @@ const addIngredient = () => {
     }
 
 
+    //add test to DOM
+    const addIngredient = (i, id, name) => {
+        const ul = document.querySelector(id);
+        //Delete all li so they can be replaced with new ones
+        //Adds new li with content and displays it to DOM
+        for (let j = 0; j < name[i].length; j++) {
+            const newLiItem = document.createElement("li");
+            const newItem = document.createTextNode(name[i][j]);
+            //Somewhere here could be a loop to show number.toFixed(2) + " €"
+            newLiItem.appendChild(newItem);
+            ul.insertAdjacentElement("beforeend", newLiItem);
+        }
+    }
     //calculate cheese
     for (let i = 0; i < checkBoxCheese.length; i++) {
         if (checkBoxCheese[i].checked) {
             sumCheese += cheese[i][1];
+            addIngredient(i, "#target-cheese", cheese)
         }
     }
 
@@ -125,4 +140,4 @@ const finalSum = () => {
     sumOnPage.textContent = (dough[1] + finalSauce + finalSumCheese + finalSumToppings + finalSumExtras).toFixed(2) + " €";
 }
 //initial call for showing bas ingredients on loading page
-addIngredient();
+fillList();
