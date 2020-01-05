@@ -89,12 +89,18 @@ const fillList = () => {
             addSauce(i);
         }
     }
-
-
-    //add test to DOM
-    const addIngredient = (i, id, name) => {
+    //General wipe for #final-list ul
+    const wipeList = id => {
         const ul = document.querySelector(id);
         //Delete all li so they can be replaced with new ones
+        while (ul.firstChild) {
+            ul.removeChild(ul.firstChild);
+        }
+    }
+    //add rest to DOM
+    const addIngredient = (i, id, name) => {
+
+        const ul = document.querySelector(id);
         //Adds new li with content and displays it to DOM
         for (let j = 0; j < name[i].length; j++) {
             const newLiItem = document.createElement("li");
@@ -106,6 +112,9 @@ const fillList = () => {
     }
     //calculate cheese
     for (let i = 0; i < checkBoxCheese.length; i++) {
+        if (i === 0) {
+            wipeList("#target-cheese");
+        }
         if (checkBoxCheese[i].checked) {
             sumCheese += cheese[i][1];
             addIngredient(i, "#target-cheese", cheese)
