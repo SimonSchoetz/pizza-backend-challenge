@@ -103,14 +103,18 @@ const fillList = () => {
         }
         if (checkBoxCheese[i].checked) {
             sumCheese += cheese[i][1];
-            addIngredient(i, "#target-cheese", cheese)
+            addIngredient(i, "#target-cheese", cheese);
         }
     }
 
     //calculate toppings
     for (let i = 0; i < checkBoxToppings.length; i++) {
+        if (i === 0) {
+            wipeList("#target-toppings");
+        }
         if (checkBoxToppings[i].checked) {
             sumToppings += toppings[i][1];
+            addIngredient(i, "#target-toppings", toppings);
         }
     }
 
