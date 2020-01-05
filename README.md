@@ -84,6 +84,8 @@ Personal goal since it is Christmas/NYE: Getting it done before NYE
 
 ## Challenges + lessons learned
 
+- Reference error: document not defined
+
 (What didn't go well? How would you advise future-you so it goes better next time?)
 
 ## Achievements
