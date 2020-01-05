@@ -14,19 +14,21 @@ const cremeFresh = ["Créme Fresh", 1.50];
 const gauda = ["Gauda", 1];
 const emmentaler = ["Emmentaler", 1.50];
 const gorgonzola = ["Gorgonzola", 2];
-let sumCheese = 0;
+let FinalSumCheese = 0;
 
 // Toppings
 const salami = ["Salami", 1];
 const olives = ["Olives", 0.80];
 const ruccola = ["Ruccola", 0.50];
 const parmesan = ["Parmesan", 0.50];
+let FinalSumToppings = 0;
 
 // Extras
 const oregano = ["Oregano", 0.30];
 const garlicOil = ["Garlic Oil", 0.50];
 const chilliOil = ["Chilli Oil", 0.40];
 const rosemaryOil = ["Rosemary Oil", 0.70];
+let FinalSumExtras = 0;
 
 //Dough
 const dough = ["Dough", 2];
@@ -45,28 +47,34 @@ sumOnPage.textContent = sumPizza + " €";
 //     addCheese()
 // };
 
-const addCheese = () => {
+const addIngredient = () => {
     /**
      * on call, check which boxes are checked
-     * add all checked to sum
+     * add all checked to sumX
      * AFTER LOOP:
-     * sumCheese = sum
+     * FinalSumX = sumX
      * call summing calculation
      */
-    const checkBox = document.getElementsByName("cheese");
-    let sumOfPart = 0
-
-    for (let i = 0; i < checkBox.length; i++) {
-        if (checkBox[i].checked) {
-            sumOfPart += 2;
+    const checkBoxCheese = document.getElementsByName("cheese");
+    const checkBoxToppings = document.getElementsByName("toppings");
+    const checkBoxExtras = document.getElementsByName("extras");
+    let sumCheese = 0;
+    let sumToppings = 0;
+    let sumExtras = 0;
+    //
+    for (let i = 0; i < checkBoxCheese.length; i++) {
+        if (checkBoxCheese[i].checked) {
+            sumCheese += 2;
         }
     }
 
-    sumCheese = sumOfPart;
+    FinalSumCheese = sumCheese;
+    FinalSumToppings = sumToppings;
+    FinalSumExtras = sumExtras;
 
     finalSum();
 }
 
 const finalSum = () => {
-    sumOnPage.textContent = sumPizza + sumCheese + " €";
+    sumOnPage.textContent = sumPizza + sumCheese + sumToppings + sumExtras " €";
 }
