@@ -8,6 +8,8 @@
  *********************************/
 
 
+//Dough
+const dough = ["Our classic dough", 2];
 
 //Sauce
 const sauce = [["Tomato Sauce", 1], ["Créme Fresh", 1.50]];
@@ -31,8 +33,7 @@ const chilliOil = ["Chilli Oil", 0.40];
 const rosemaryOil = ["Rosemary Oil", 0.70];
 let finalSumExtras = 0;
 
-//Dough
-const dough = ["Dough", 2];
+
 //
 /**********************************
  * Calculating and showing the sum
@@ -57,13 +58,15 @@ const addIngredient = () => {
     //add sauce in DOM
     const addSauce = (i) => {
         const ul = document.querySelector("#target-sauce");
-        //Delete all li to make the replaced with new ones
+        //Delete all li so they can be replaced with new ones
         while (ul.firstChild) {
             ul.removeChild(ul.firstChild);
         }
+        //Adds new li with content and displays it to DOM
         for (let j = 0; j < sauce[i].length; j++) {
             const newLiItem = document.createElement("li");
-            const newItem = document.createTextNode(sauce[i][j])
+            const newItem = document.createTextNode(sauce[i][j]);
+            //Somewhere here could be a loop to show number.toFixed(2) + " €"
             newLiItem.appendChild(newItem);
             ul.insertAdjacentElement("beforeend", newLiItem);
         }
@@ -95,7 +98,7 @@ const addIngredient = () => {
 //Calculate and display final prize in DOM
 const finalSum = () => {
     const sumOnPage = document.querySelector("#target-sum");
-    sumOnPage.textContent = dough[1] + finalSauce + finalSumCheese + finalSumToppings + finalSumExtras + " €";
+    sumOnPage.textContent = (dough[1] + finalSauce + finalSumCheese + finalSumToppings + finalSumExtras).toFixed(2) + " €";
 }
 //initial call for showing bas ingredients on loading page
 addIngredient();
