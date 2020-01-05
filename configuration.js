@@ -65,31 +65,7 @@ const fillList = () => {
     let sumToppings = 0;
     let sumExtras = 0;
 
-
-    //add sauce to DOM
-    const addSauce = (i) => {
-        const ul = document.querySelector("#target-sauce");
-        //Delete all li so they can be replaced with new ones
-        while (ul.firstChild) {
-            ul.removeChild(ul.firstChild);
-        }
-        //Adds new li with content and displays it to DOM
-        for (let j = 0; j < sauce[i].length; j++) {
-            const newLiItem = document.createElement("li");
-            const newItem = document.createTextNode(sauce[i][j]);
-            //Somewhere here could be a loop to show number.toFixed(2) + " €"
-            newLiItem.appendChild(newItem);
-            ul.insertAdjacentElement("beforeend", newLiItem);
-        }
-    }
-    //evaluate sauce
-    for (let i = 0; i < checkBoxSauce.length; i++) {
-        if (checkBoxSauce[i].checked) {
-            chosenSauce += sauce[i][1];
-            addSauce(i);
-        }
-    }
-    //General wipe for #final-list ul
+    //Wipe for #final-list ul
     const wipeList = id => {
         const ul = document.querySelector(id);
         //Delete all li so they can be replaced with new ones
@@ -97,7 +73,7 @@ const fillList = () => {
             ul.removeChild(ul.firstChild);
         }
     }
-    //add rest to DOM
+    //add ingredients to its dedicated ul
     const addIngredient = (i, id, name) => {
 
         const ul = document.querySelector(id);
@@ -108,6 +84,16 @@ const fillList = () => {
             //Somewhere here could be a loop to show number.toFixed(2) + " €"
             newLiItem.appendChild(newItem);
             ul.insertAdjacentElement("beforeend", newLiItem);
+        }
+    }
+    //evaluate sauce
+    for (let i = 0; i < checkBoxSauce.length; i++) {
+        if (i === 0) {
+            wipeList("#target-sauce");
+        }
+        if (checkBoxSauce[i].checked) {
+            chosenSauce += sauce[i][1];
+            addIngredient(i, "#target-sauce", sauce);
         }
     }
     //calculate cheese
