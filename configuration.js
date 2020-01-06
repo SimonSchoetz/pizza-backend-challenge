@@ -83,10 +83,12 @@ const fillList = () => {
         for (let j = 0; j < name[i].length; j++) {
             const newLi = document.createElement("li");
             const newItem = document.createTextNode(name[i][j]);
-            // if (typeof name[i][j] === "number") {
-            //     newItem = document.createTextNode(`${(name[i][j]).toFixed(2)} €`);
-            // }   // NOT WORKING
-            newLi.appendChild(newItem);
+
+            if (typeof name[i][j] === "number") {
+                newLi.innerHTML = `${(name[i][j]).toFixed(2)} €`;
+            } else {
+                newLi.innerHTML = name[i][j];
+            }
             ul.insertAdjacentElement("beforeend", newLi);
         }
     }
