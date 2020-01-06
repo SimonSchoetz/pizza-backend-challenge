@@ -1,8 +1,8 @@
 <svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g class="glowing-rb" filter="url(#filter0_d)">
 <circle cx="54" cy="50" r="50" fill="#FDC708"/>
-<circle cx="54" cy="50" r="25" stroke="url(#paint0_linear)" stroke-opacity="0.75" stroke-width="50"/>
-<circle cx="54" cy="50" r="25" stroke="url(#paint1_radial)" stroke-width="50"/>
+<circle cx="54" cy="50" r="47.5" stroke="url(#paint0_linear)" stroke-opacity="0.75" stroke-width="5"/>
+<circle cx="54" cy="50" r="47.5" stroke="url(#paint1_radial)" stroke-width="5"/>
 </g>
 <defs>
 <filter id="filter0_d" x="0" y="0" width="108" height="108" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
