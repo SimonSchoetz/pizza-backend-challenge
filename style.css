@@ -32,7 +32,6 @@ a:active {
     HEADER
 **************/
 header {
-    position: fixed center;
     height: 20vh;
     min-height: 100px;
     text-align: center;
