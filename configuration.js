@@ -82,7 +82,6 @@ const fillList = () => {
         //Adds new li with content and displays it to DOM
         for (let j = 0; j < name[i].length; j++) {
             const newLi = document.createElement("li");
-            const newItem = document.createTextNode(name[i][j]);
 
             if (typeof name[i][j] === "number") {
                 newLi.innerHTML = `${(name[i][j]).toFixed(2)} €`;
@@ -92,13 +91,17 @@ const fillList = () => {
             ul.insertAdjacentElement("beforeend", newLi);
         }
     }
+
+
+    wipeList("#target-dough");
+    wipeList("#target-sauce");
+    wipeList("#target-cheese");
+    wipeList("#target-toppings");
+    wipeList("#target-extras");
     //
     //add dough to dom and sum
     //kept code kinda similar to the others to keep it consistent and open possibility for future options of different dough 
     for (let i = 0; i < dough.length; i++) {
-        if (i === 0) {
-            wipeList("#target-dough");
-        }
         chosenDough = dough[i][1]; //for calculation of the finalSum
         addIngredient(i, "#target-dough", dough);//for showing up on the final-list
     }
@@ -106,9 +109,6 @@ const fillList = () => {
 
     //evaluate sauce
     for (let i = 0; i < checkBoxSauce.length; i++) {
-        if (i === 0) {
-            wipeList("#target-sauce");
-        }
         if (checkBoxSauce[i].checked) {
             chosenSauce += sauce[i][1];
             addIngredient(i, "#target-sauce", sauce);
@@ -116,9 +116,6 @@ const fillList = () => {
     }
     //calculate cheese
     for (let i = 0; i < checkBoxCheese.length; i++) {
-        if (i === 0) {
-            wipeList("#target-cheese");
-        }
         if (checkBoxCheese[i].checked) {
             sumCheese += cheese[i][1];
             addIngredient(i, "#target-cheese", cheese);
@@ -127,9 +124,6 @@ const fillList = () => {
 
     //calculate toppings
     for (let i = 0; i < checkBoxToppings.length; i++) {
-        if (i === 0) {
-            wipeList("#target-toppings");
-        }
         if (checkBoxToppings[i].checked) {
             sumToppings += toppings[i][1];
             addIngredient(i, "#target-toppings", toppings);
@@ -138,9 +132,6 @@ const fillList = () => {
 
     //calculate extras
     for (let i = 0; i < checkBoxExtras.length; i++) {
-        if (i === 0) {
-            wipeList("#target-extras");
-        }
         if (checkBoxExtras[i].checked) {
             sumExtras += extras[i][1];
             addIngredient(i, "#target-extras", extras);

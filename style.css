@@ -132,7 +132,7 @@ RIGHT SECTION
 /**************
 CHECKBOX STYLING
 **************/
-input[type="radio"] {
+/* input[type="radio"] {
     display:none;
 }
 label {
@@ -142,4 +142,4 @@ label {
 input[type="radio"]:checked ~ svg .glowing-rb {
     stroke-width: 5;
     r: 47.5;
-}
+} */
