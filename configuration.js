@@ -159,7 +159,7 @@ const fillList = () => {
 //Calculate and display final prize in DOM
 const finalSum = () => {
     const sumOnPage = document.querySelector("#target-sum");
-    sumOnPage.textContent = (finalDough + finalSauce + finalSumCheese + finalSumToppings + finalSumExtras).toFixed(2) + " €";
+    sumOnPage.textContent = `${(finalDough + finalSauce + finalSumCheese + finalSumToppings + finalSumExtras).toFixed(2)} €`;
 }
 //initial call for showing bas ingredients on loading page
 fillList();
