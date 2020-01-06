@@ -139,7 +139,7 @@ label {
     cursor: pointer;
 }
 
-svg .glowing-rb:hover {
+input[type="radio"]:checked ~ svg .glowing-rb {
     stroke-width: 5;
     r: 47.5;
 }
