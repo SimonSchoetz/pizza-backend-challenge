@@ -97,6 +97,17 @@ h2 {
     background-color: rgba(50, 50, 50, 0.158);
 }
 
+#individual-selection li {
+    background-color: rgba(0, 0, 0, 0.197);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+#individual-selection li:hover {
+    background-color: rgba(0, 0, 0, 0.197);
+}
+
 /*********
 RIGHT SECTION
 *********/
@@ -127,17 +138,28 @@ RIGHT SECTION
 #final-list ul>li {
     width: 50%;
     min-width: fit-content;
+    font-size: 1.1rem;
 }
 
 /**************
 CHECKBOX STYLING
 **************/
-/* input[type="radio"] {
-    display:none;
-}
+
 label {
     cursor: pointer;
 }
+
+/* input {
+    position: absolute;
+        opacity: 0;
+    
+} */
+input:checked {
+}
+/* input[type="radio"] {
+    display:none;
+}
+
 
 input[type="radio"]:checked ~ svg .glowing-rb {
     stroke-width: 5;

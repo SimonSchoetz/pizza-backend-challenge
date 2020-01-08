@@ -18,12 +18,7 @@ Rushed into the project by starting with the "uninteresting" stuff because I wai
 
 05Jan'20
 - Home zoning and finishing with major goal of creating selectors and showing selected ingredients + calculated sum on page - 6.5h
- ---------------
-## TODO (just for me)
 
-- Challenges + lessons learned (bottom)
-- Achievements (bottom)
-- Buddy sign-off (bottom)
 -----------------
 ## Overview
 
